@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+    <title>v-model</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+  <script type="text/javascript">
+      var app6 = new Vue({
+          el: '#app-6',
+          data: {
+              message: 'Hello Vue!'
+          }
+      });
+  </script>
+</body>
+</html>

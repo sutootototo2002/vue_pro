@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+    <title>View层改变</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+<div id="app-5">
+   <ul>
+       <li v-for="todo in todos">
+           {{ todo.text }}
+       </li>
+   </ul>
+    <button v-on:click="add">add</button>
+    <button v-on:click="plus">plus</button>
+</div>
+
+<script type="text/javascript">
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            todos: [
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue' },
+                { text: 'Build something awesome' }
+            ]
+        },
+        methods: {
+            add: function () {
+                this.todos.push({text:"susu"});
+            },
+            plus:function(){
+                this.todos.pop();
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
