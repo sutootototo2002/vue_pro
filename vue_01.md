@@ -261,4 +261,75 @@ Vue.js 学习笔记
 	</body>
 	</html>
 
+第七个例子：用组件构建-1
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+	    <title>用组件构建-1</title>
+	    <script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+	<div id="app-7">
+	    <ol>
+	        <!-- Now we provide each todo-item with the todo object    -->
+	        <!-- it's representing, so that its content can be dynamic -->
+	        <todo-item v-bind:todo="item"></todo-item>
+	    </ol>
+	</div>
+	<script type="text/javascript">
+	
+	    Vue.component('todo-item', {
+	        template: '<li>this is a todo</li>'
+	    });
+	    var app7 = new Vue({
+	        el: '#app-7',
+	        data: {
+	
+	        }
+	    })
+	
+	</script>
+	</body>
+	</html>
+
+第八个例子：用组件构建-2
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+	    <title>用组件构建</title>
+	    <script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+	<div id="app-7">
+	    <ol>
+	        <!-- Now we provide each todo-item with the todo object    -->
+	        <!-- it's representing, so that its content can be dynamic -->
+	        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+	    </ol>
+	</div>
+	<script type="text/javascript">
+	    Vue.component('todo-item', {
+	        props: ['todo'],
+	        template: '<li>{{ todo.text }}</li>'
+	    })
+	    var app7 = new Vue({
+	        el: '#app-7',
+	        data: {
+	            groceryList: [
+	                { text: 'Vegetables' },
+	                { text: 'Cheese' },
+	                { text: 'Whatever else humans are supposed to eat' }
+	            ]
+	        }
+	    })
+	</script>
+	</body>
+	</html>
+
+
+
 
