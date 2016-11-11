@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
-    <title>用组件构建</title>
+    <title>用组件构建-1</title>
     <script type="text/javascript" src="js/vue.js"></script>
 </head>
 <body>
@@ -10,24 +10,26 @@
     <ol>
         <!-- Now we provide each todo-item with the todo object    -->
         <!-- it's representing, so that its content can be dynamic -->
-        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+        <todo-item v-for="item in arr1" v-bind:todo="item"></todo-item>
     </ol>
 </div>
 <script type="text/javascript">
+
     Vue.component('todo-item', {
-        props: ['todo'],
-        template: '<li>{{ todo.text }}</li>'
-    })
+        props:['todo'],
+        template: '<li>{{todo.text}}</li>'
+    });
     var app7 = new Vue({
         el: '#app-7',
         data: {
-            groceryList: [
-                { text: 'Vegetables' },
-                { text: 'Cheese' },
-                { text: 'Whatever else humans are supposed to eat' }
+            arr1:[
+                {text:'suxiaoyan0'},
+                {text:'suxiaoyan1'},
+                {text:'suxiaoyan2'}
             ]
         }
     })
+
 </script>
 </body>
 </html>
