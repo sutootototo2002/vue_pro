@@ -80,3 +80,7 @@ Vue.js 实例
 钩子的 this 指向调用它的 Vue 实例。
 
 
+![](http://i.imgur.com/HplPjPK.png)
+
+![](http://i.imgur.com/PYg4ZrW.png)
+
