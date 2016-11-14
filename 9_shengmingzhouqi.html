@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+    <title>生命周期</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="example">
+  {{message}}
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#example',
+        data:{
+            message:'hello Vue!'
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+            console.log('message is: ' + this.message)
+        }
+    })
+    // -> "message is: 1"
+</script>
+</body>
+</html>
