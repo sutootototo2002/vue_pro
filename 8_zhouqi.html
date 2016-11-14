@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html;charset=urf-8”>
+    <title>用组件构建</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="example">
+  {{message}}
+</div>
+<script type="text/javascript">
+    var data = {message: 1 }
+    var vm = new Vue({
+        el: '#example',
+        data: data
+    })
+    //vm.$data === data // -> true
+    vm.a=3;
+    //vm.$el === document.getElementById('example') // -> true
+    // $watch 是一个实例方法
+    vm.$watch('message', function (newVal, oldVal) {
+        // 这个回调将在 `vm.a`  改变后调用
+        alert('改变啦！');
+    })
+</script>
+</body>
+</html>
